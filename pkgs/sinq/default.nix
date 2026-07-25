@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "1jlbwsbyq56q3899ksmdinv1i49gd88b8kagbi94kr9g2911ckxc";
-    aarch64-linux = "1wfxsa0cp3rnjsn4k6gdp41lrywk0qhssps4wa4p8nphkbsnn2c7";
-    x86_64-darwin = "1n777iv7kfznnqgv0nc9mjzvq0jpbmhz8cr4swcq6q3akjhhnkjl";
-    aarch64-darwin = "16yy3vnqgymzsbajaqxd77bmcgapsr1k4c9bixmprlvvn9kcxz98";
+    x86_64-linux = "0mja7zq3jxj8d44df2fzkncbzrvxf50sqakpfd2c1cd0gn8bysxv";
+    aarch64-linux = "1gp4g80m2p7ybn8rdbq9r0ycrbjpmmhzk6kgn47xdgdi9w1kpjaz";
+    x86_64-darwin = "02fimwha1anm9ap6nav3xm4dbgazp9myf3pcpbyzh3bsx2fz7494";
+    aarch64-darwin = "09dg24v53wv8jiv2m4hjxv7qj3ays869x15n07vasksdrvh0m06l";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.12/sinq-1.0.0-rc.12-linux-x86_64.tar.gz";
-    aarch64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.12/sinq-1.0.0-rc.12-linux-arm64.tar.gz";
-    x86_64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.12/sinq-1.0.0-rc.12-macOS-x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.12/sinq-1.0.0-rc.12-macOS-arm64.tar.gz";
+    x86_64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-linux-x86_64.tar.gz";
+    aarch64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-linux-arm64.tar.gz";
+    x86_64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-macOS-x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-macOS-arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "sinq";
-  version = "1.0.0-rc.12";
+  version = "1.0.0-rc.13";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
