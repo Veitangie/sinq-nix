@@ -9,22 +9,22 @@
 let
   inherit (stdenvNoCC.hostPlatform) system;
   shaMap = {
-    x86_64-linux = "0ivhbnwrcv01qclhmgkbp0nkax9wycphprpn8a2k5cr9gid91rix";
-    aarch64-linux = "14qvy3ckpihrmj136c0fp892awch2apvdzkr2cmdkx58glkql1vx";
-    x86_64-darwin = "1qi1gnmjk3hflcsyc9x907wnx0w2zvhy7hywa6wxrj4qk7ppgvb4";
-    aarch64-darwin = "0wzcgz14r2fdi3ysw4zlsbjinc5a88fx0isfqab2lflkcpnzgdmw";
+    x86_64-linux = "1cly631l5fvi8s7vmm8jfh1zrrq0rx94cfhhsvvxlgzcy88q0wi0";
+    aarch64-linux = "12why0y0vca34cp19qyxl2v8x5m4y8bwr751ya4rbmg11zaifxvs";
+    x86_64-darwin = "0x5zssxvmak904h32q1wk8cp334gcgkmd7lmvn05lcl3m0g27sig";
+    aarch64-darwin = "0ymd4zvvh13n761xhmqgg36xi441q3ml6rjn5j5m1a5mj9rwvjfr";
   };
 
   urlMap = {
-    x86_64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-linux-x86_64.tar.gz";
-    aarch64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-linux-arm64.tar.gz";
-    x86_64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-macOS-x86_64.tar.gz";
-    aarch64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.13/sinq-1.0.0-rc.13-macOS-arm64.tar.gz";
+    x86_64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.14/sinq-1.0.0-rc.14-linux-x86_64.tar.gz";
+    aarch64-linux = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.14/sinq-1.0.0-rc.14-linux-arm64.tar.gz";
+    x86_64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.14/sinq-1.0.0-rc.14-macOS-x86_64.tar.gz";
+    aarch64-darwin = "https://github.com/Veitangie/sinq/releases/download/v1.0.0-rc.14/sinq-1.0.0-rc.14-macOS-arm64.tar.gz";
   };
 in
 stdenvNoCC.mkDerivation {
   pname = "sinq";
-  version = "1.0.0-rc.13";
+  version = "1.0.0-rc.14";
   src = fetchurl {
     url = urlMap.${system};
     sha256 = shaMap.${system};
@@ -42,7 +42,7 @@ stdenvNoCC.mkDerivation {
   meta = {
     description = "A concurrent HTTP functional and integration testing tool.";
     homepage = "https://github.com/Veitangie/sinq";
-    license = lib.licenses.gpl3Only;
+    license = lib.licenses.gpl3Plus;
 
     sourceProvenance = [ lib.sourceTypes.binaryNativeCode ];
 
